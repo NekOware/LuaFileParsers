@@ -30,7 +30,7 @@ local key_val_from_line=function(line)
         end
       end
       if c=='\\'or(eschrs[c]and esc%2~=0)then esc=esc+1
-      else --[[if esc%2~=0 then out=out:sub(1,-2)..'\\'..out:sub(-1,-1)end]] esc=0 end
+      else esc=0 end
     end)
     table.insert(parts,out)
     for i=1,#parts do
@@ -41,7 +41,7 @@ local key_val_from_line=function(line)
       parts[i]=parts[i]:gsub('([\\]+)(.?)',function(e,c)
         if #e%2==0 then return(e..c)else return(eschrs[c]and(e..c)or e:sub(1,-2))end
       end)
-    end --p(parts)
+    end
     local res=load('return('..table.concat(parts,'..')..')')()
     return key,res
   end
