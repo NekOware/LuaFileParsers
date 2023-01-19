@@ -1,5 +1,5 @@
 # LuaFileParsers
-Parsing diffrent file formats using Lua.
+Parsing diffrent file formats using Lua.  
 (The code you'll see here is total spaghetti bolognese.)
 
 ```lua
