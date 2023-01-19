@@ -31,8 +31,11 @@ parser.ini.saveFile( './path/to/file.ini', { Foo = "Hello, World!", Bar = { Baz 
 
 There are some extra features that i support in the INI standard which are listed below.
 - Comments start with either `;` or `#` characters that are outside of a string and end when a new line starts.
-- You can go up a level in sections using `..` in a section name.
-  - ex. Go from `[Foo.Bar]` to `[Foo.Baz]` using `[..Baz]`.
+- Relative section names are supported.
+  - With a leading dot in section name you can indicate nesting to the previous section.
+    - ex. Go from `[Foo]` to `[Foo.Bar]` using `[.Bar]`.
+  - You can go up a level in sections using `..` in a section name.
+    - ex. Go from `[Foo.Bar]` to `[Foo.Baz]` using `[..Baz]`.
 - The values `true`, `false` and any numerical value if outside of a string, will automatically be converted into a boolean/number.
   - This won't apply if the value is inside of quotes like `"true"` or `"234"`.
 - If a value occurs multiple times in a section then the last one will be used over any other.
