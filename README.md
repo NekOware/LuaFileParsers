@@ -1,5 +1,6 @@
 # LuaFileParsers
 Parsing diffrent file formats using Lua.
+(The code you'll see here is total spaghetti bolognese.)
 
 ```lua
 local parser = require'LuaFileParsers' -- or `require'LuaFileParsers/init.lua'`
